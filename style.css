@@ -1,0 +1,128 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  margin: 0;
+  padding: 0;
+  color: beige;
+}
+
+body {
+  min-height: 100vh;
+  height: 100%;
+  background-image: url(/design/teglafal.jpg);
+}
+
+main {
+  width: 80%;
+  max-width: 1000px;
+  height: 100%;
+  margin: auto;
+  background-color: rgb(#333333);
+  border: 1px solid gray;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    "ar ar"
+    "a n"
+    "a n"
+    "f f";
+}
+.aside {
+  grid-area: ar;
+  background-image: url(/design/beer-new_401732638.jpg);
+  height: 300px;
+  background-size: cover;
+  border: 1px solid #333333;
+}
+.aside h1 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 32px;
+  text-align: left;
+  padding-left: 30px;
+  padding-top: 30px;
+}
+.nav {
+  grid-area: n;
+  border: 2px solid #333333;
+  width: 300px;
+  background-color: #333333;
+}
+.nav ul {
+  list-style-type: none;
+}
+.nav li {
+  margin: 10px;
+  border: 1px solid white;
+  padding: 10px;
+  border-radius: 15px;
+}
+.nav ul li a {
+  display: block;
+  color: red;
+  font-weight: bold;
+  text-decoration: none;
+}
+.nav a:hover {
+  color: aliceblue;
+}
+.article {
+  grid-area: a;
+  width: auto;
+  border: 2px solid #333333;
+  background-color: black;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas:
+    "h3 h3"
+    "i ul";
+    gap: 60px;
+}
+.article h3 {
+  grid-area: h3;
+  font-size: 15px;
+  margin-left: 15px;
+}
+.article ul {
+  grid-area: ul;
+  list-style-type: square;
+}
+.article li {
+  font-size: 10px;
+  margin-top: 10px;
+}
+.article img {
+  grid-area: i;
+  width: 250px;
+  height: 250px;
+  margin-left: 10px;
+  border: 1px solid gray;
+  padding: 10px;
+}
+.footer {
+  grid-area: f;
+  border: 2px solid #333333;
+  background-color: gray;
+  text-align: center;
+  padding-top: 5px;
+}
+
+@media screen and (max-width: 940px) {
+    main{
+    width: 100%;
+    grid-template-columns: repeat(1, auto);
+    grid-template-areas:
+      "ar"
+      "n"
+      "a"
+      "f";
+    }
+    .nav {
+        width: max-content;
+        
+      }
+    
+}
